@@ -2,7 +2,7 @@
 /**
  * 常量类,定义数据库对象
  */
-require "/Users/sam/Documents/Code/PHP/AppService/Medoo/vendor/autoload.php";
+require dirname(__DIR__)."/Medoo/vendor/autoload.php";
 
 use Medoo\Medoo;
 define("db_address", "127.0.0.1");

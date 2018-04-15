@@ -26,7 +26,9 @@ $worker->count = 4;
 // 服务注册地址
 $worker->registerAddress = '127.0.0.1:1238';
 
-require_once "/Users/sam/Documents/Code/PHP/AppService/Common/Const.php";
+// require_once "/Users/sam/Documents/Code/PHP/AppService/Common/Const.php";
+
+require_once dirname(dirname(dirname(__DIR__)))."/Common/Const.php";
 
 // 如果不是在根目录启动，则运行runAll方法
 if(!defined('GLOBAL_START')) {
