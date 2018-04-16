@@ -49,6 +49,7 @@ class Events {
         global $con;    //获取数据库对象
         $response = null;
         $request = json_decode($message);   //解析请求体
+        echo "$message\n";
         $msg = $request->msg;   //获取方式
         $telephone = $request->telephone;   //用户手机号
         $token = $request->token;   //用户token
@@ -109,6 +110,7 @@ class Events {
                         $to_client_id = $con->get("user_list", "client_id", [
                             "telephone" => $to_telephone
                         ]);     //获取请求对象的client_id
+
                         Gateway::sendToClient($to_client_id, json_encode($response));   //发送给指定对象
                     }
                     break;
