@@ -57,12 +57,12 @@ class Events {
             switch($msg) {  //判断socket请求方式
                 case socket_login:  //登录请求
                     $device = $request->info;
-                    $con->update("user_list", [     //更新client_id
-                        "client_id" => $client_id,
+                    $con->update("user_list", [     //更新device
                         "device" => $device
                     ], [
                         "telephone" => $telephone
                     ]);
+                    Gateway::bindUid($client_id, $telephone);       //client_id和telephone绑定
                     echo "login:$telephone,$client_id\n";
                     $result = $con->select("add_friend_request", [
                         "[>]user_list" => [
@@ -106,12 +106,7 @@ class Events {
                                 "toTelephone" => $to_telephone
                             )
                         );
-    
-                        $to_client_id = $con->get("user_list", "client_id", [
-                            "telephone" => $to_telephone
-                        ]);     //获取请求对象的client_id
-
-                        Gateway::sendToClient($to_client_id, json_encode($response));   //发送给指定对象
+                        Gateway::sendToUid($to_telephone, json_encode($response));      //直接发送给to_telephone
                     }
                     break;
             }
@@ -131,7 +126,6 @@ class Events {
        echo "logout: $client_id\n";
        global $con;
        $con->update("user_list", [
-           "client_id" => null,
            "device" => null
        ], [
            "telephone" => $_SESSION["telephone"]        //断开连接后从session中获取telephone并删除client_id
