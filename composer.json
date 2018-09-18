@@ -1,0 +1,6 @@
+{
+    "require": {
+        "catfan/medoo": "^1.5",
+        "workerman/gateway-worker": "^3.0"
+    }
+}
