@@ -27,6 +27,8 @@ if ($con == null) {
     $blood = $user->blood;
     $height = $user->height;
     $weight = $user->weight;
+    $isCountStep = $user->isCountStep;
+    $goalSteps = $user->goalSteps;
     $signature = $user->signature;
 
     $result = $con->update("user_list", [
@@ -36,6 +38,8 @@ if ($con == null) {
         "blood" => $blood,
         "height" => $height,
         "weight" => $weight,
+        "goal_steps" => $goalSteps,
+        "is_count_step" => $isCountStep,
         "signature" => $signature
     ], [
         "token" => $token

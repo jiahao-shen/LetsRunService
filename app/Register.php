@@ -6,7 +6,7 @@
 header("Content-type:text/html;charset=utf-8");
 require "Database.php";
 
-define("path", "./UserImage/");
+define("path", "../UserImage/");
 define("telephone_not_exist", 11);
 define("unknown_error", 13);
 define("check_phone", 20);

@@ -60,6 +60,8 @@ if ($con == null) {
                             "height" => $result["height"],
                             "weight" => $result["weight"],
                             "signature" => $result["signature"],
+                            "isCountStep" => $result["is_count_step"],
+                            "goalSteps" => $result["goal_steps"]
                             )
                         );
                 } else {    //未知错误

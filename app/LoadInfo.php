@@ -39,6 +39,8 @@ if ($con == null) {
                 "blood" => $result["blood"],
                 "height" => $result["height"],
                 "weight" => $result["weight"],
+                "isCountStep" => $result["is_count_step"],
+                "goalSteps" => $result["goal_steps"],
                 "signature" => $result["signature"],
             )
         );
