@@ -80,6 +80,7 @@ class Events {
                         "msg" => socket_login,
                         "info" => $result
                     );
+                    echo json_encode($response);
                     Gateway::sendToCurrentClient(json_encode($response));
                     $_SESSION["telephone"] = $telephone;    //session保存该连接的电话号码
                     break;

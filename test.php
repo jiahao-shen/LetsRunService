@@ -1,10 +1,14 @@
 <?php
 header("Conten-type:text/html;charset=utf-8");
 
-require "Common/Const.php";
+require "app/Database.php";
 
 if ($con != null) {
-    $result = $con -> select("test", "*");
-    echo json_encode($result);
+    $result = $con->update("test", [
+        "name" => "fuck"
+    ], [
+        "id" => 1
+    ]);
+    print($result->rowCount());
 }
 ?>
