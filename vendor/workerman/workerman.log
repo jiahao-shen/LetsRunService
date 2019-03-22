@@ -17,3 +17,9 @@
 2019-03-19 18:09:58 pid:18656 Workerman[start.php] stopping ...
 2019-03-19 18:09:58 pid:18656 Workerman[start.php] has been stopped
 2019-03-19 18:10:26 pid:19570 Workerman[start.php] start in DEBUG mode
+2019-03-21 18:40:18 pid:19570 Workerman[start.php] stopping ...
+2019-03-21 18:40:18 pid:19570 Workerman[start.php] has been stopped
+2019-03-21 18:40:19 pid:59031 Workerman[start.php] start in DEBUG mode
+2019-03-21 18:45:47 pid:59031 Workerman[start.php] stopping ...
+2019-03-21 18:45:47 pid:59031 Workerman[start.php] has been stopped
+2019-03-21 18:45:50 pid:59325 Workerman[start.php] start in DEBUG mode
