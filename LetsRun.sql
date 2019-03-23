@@ -34,13 +34,21 @@ CREATE TABLE `add_friend_request` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `add_friend_request`
+-- Table structure for table `daily_sport_data`
 --
 
-LOCK TABLES `add_friend_request` WRITE;
-/*!40000 ALTER TABLE `add_friend_request` DISABLE KEYS */;
-/*!40000 ALTER TABLE `add_friend_request` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `daily_sport_data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `daily_sport_data` (
+  `telephone` varchar(20) NOT NULL,
+  `date` date NOT NULL DEFAULT curdate(),
+  `steps` int(11) DEFAULT 0,
+  `distance` int(11) DEFAULT 0,
+  `breath` int(5) DEFAULT 0,
+  PRIMARY KEY (`telephone`,`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `test`
@@ -56,16 +64,6 @@ CREATE TABLE `test` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `test`
---
-
-LOCK TABLES `test` WRITE;
-/*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'fuck',1),(2,'test',0);
-/*!40000 ALTER TABLE `test` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user_list`
@@ -95,16 +93,6 @@ CREATE TABLE `user_list` (
   PRIMARY KEY (`telephone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_list`
---
-
-LOCK TABLES `user_list` WRITE;
-/*!40000 ALTER TABLE `user_list` DISABLE KEYS */;
-INSERT INTO `user_list` VALUES ('13915558435','$2y$10$LLY2Cw91pryz9NXtKykPv.pIqxxBYTiaNpIoylC/6Cl7GF1laCDa2','身价好',NULL,NULL,'2019-03-19','男','O',175,60,'2019-03-19 23:16:49','7f8180ba4a77a35a36f1f2820194fa01',NULL,'随你不敢发的','HUAWEI',10000,1);
-/*!40000 ALTER TABLE `user_list` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -115,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-20  0:44:38
+-- Dump completed on 2019-03-23 16:43:37
